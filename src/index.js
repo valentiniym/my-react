@@ -1,29 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  Col,
+  Container,
+  Row,
+} from 'react-bootstrap';
 
-import Home from './components/home';
+import NavBar from './components/navbar';
+import ListMovies from './components/list-movies';
+import SignIn from './components/sign-in';
+import Advertising from './components/advertising';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.scss';
-
-const data = [{
-  id: '12345',
-  name: 'Cyril',
-  phone: '0606060606',
-}, {
-  id: '1234',
-  name: 'Matt',
-  phone: '0707070707',
-}, {
-  id: '123',
-  name: 'David',
-  phone: '0808080808',
-}];
 
 const App = () => (
   <div>
-    <ul>
-      {data.map((item) => <Home data={item} />)}
-    </ul>
+    <NavBar />
+    <Container>
+      <Row className="mt-4">
+        <Col xs={8}>
+          <ListMovies genre="Aventure" />
+          <hr className="my-4" />
+          <ListMovies genre="Horreur" />
+          <hr className="my-4" />
+          <ListMovies genre="Comédie" />
+        </Col>
+        <Col xs={3}>
+          <SignIn />
+          <hr className="my-4" />
+          <Advertising />
+        </Col>
+      </Row>
+    </Container>
   </div>
 );
 
