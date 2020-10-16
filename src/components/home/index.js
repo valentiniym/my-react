@@ -1,11 +1,9 @@
-// Dependencies
 import React from 'react';
 
 const Home = ({ data }) => (
-  <li>
-    <span>{`name : ${data.name} | `}</span>
-    <span>{`phone : ${data.phone}`}</span>
-  </li>
+  <div>
+    <h1>{`data : ${data.name}`}</h1>
+  </div>
 );
 
 export default Home;
